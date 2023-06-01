@@ -9,14 +9,11 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v3
-      with:
-        path: "./"
 
     - name: get properties
       id: json_properties
-      uses: ./
       with: 
-        file_path: 'package.json'
+        path: 'package.json'
 
     - run: |
         echo ${{steps.json_properties.outputs.name}}
